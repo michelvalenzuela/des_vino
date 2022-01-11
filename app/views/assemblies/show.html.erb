@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @assembly.title %>
+</p>
+
+<p>
+  <strong>Per:</strong>
+  <%= @assembly.per %>
+</p>
+
+<%= link_to 'Edit', edit_assembly_path(@assembly) %> |
+<%= link_to 'Back', assemblies_path %>

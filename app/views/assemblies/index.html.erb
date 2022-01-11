@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assemblies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Porcentaje(Cepa)</th>
+      <th>Cant(cepa)</th>
+      <th>Cepas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assemblies.each do |assembly| %>
+      <tr>
+        <td><%= assembly.title %></td>
+        <td><%= assembly.per %></td>
+        <td><%= assembly.wines.count %></td>
+        <td><%= assembly.wines.map(&:title).join(',') %></td>
+        <td><%= link_to 'Show', assembly %></td>
+        <td><%= link_to 'Edit', edit_assembly_path(assembly) %></td>
+        <td><%= link_to 'Destroy', assembly, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assembly', new_assembly_path %>
